@@ -2,10 +2,12 @@
 #define PokemonUSER_H
 
     void victini();
-    void bulbasaur();
+    void bulbasaur(int* vida);
     void eevee();
     void victiniFront();
     void bulbasaurFront();
     void eeveeFront();
-
+    void HP(int* vida);
+    void bagbulba(int* vida);
+    
 #endif

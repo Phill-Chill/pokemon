@@ -5,6 +5,20 @@
 #include "statusPoke.h"
 #include "music.h"
 
+void musicbattle(){
+
+        // Caminho para o arquivo de som MP3
+    const char *soundFile = "/mnt/c/Users/USER/Downloads/musica/Trainer Battle - Pokémon Red & Blue Extended.mp3";
+
+    // Comando para tocar o som em loop usando mpg123
+    char command[512];
+    snprintf(command, sizeof(command), "mpg123 -q --loop -1 \"%s\" &", soundFile);
+
+    // Executa o comando
+    system(command);
+
+    return;
+}
 
 int main(){
 
@@ -30,6 +44,8 @@ int main(){
 
     clear_screen();
 
+
+  int vida = 45;
         if(poke == 1){
             eeveeFront();
             victini();
@@ -39,7 +55,7 @@ int main(){
         else if(poke == 2){
             victiniFront();
 
-            bulbasaur();
+            bulbasaur(&vida);
         }
 
         else if(poke == 3){
@@ -47,21 +63,34 @@ int main(){
 
             eevee();
         }
+    //inicia a musica
+    musicbattle();  
 
-        
-    // Caminho para o arquivo de som MP3
-    const char *soundFile = "/mnt/c/Users/USER/Downloads/musica/Trainer Battle - Pokémon Red & Blue Extended.mp3";
+    for(; vida > 0;){
+        int x;
+         scanf("%d", &x); 
 
-    // Comando para tocar o som em loop usando mpg123
-    char command[512];
-    snprintf(command, sizeof(command), "mpg123 -q --loop -1 \"%s\" &", soundFile);
+        if(x == 1){
+            
+            
+            HP(&vida);
+             
+            clear_screen();
 
-    // Executa o comando
-    system(command);
 
-     // finaliza
-    int x;
-    scanf("%d", &x);
+            victiniFront();
+
+            bulbasaur(&vida);
+        }
+        else if(x == 2){
+            clear_screen();
+
+
+            victiniFront();
+
+            bagbulba(&vida);
+        }
+    }
     // Para a música matando o processo mpg123
     system("pkill mpg123");
  //clear_screen();
