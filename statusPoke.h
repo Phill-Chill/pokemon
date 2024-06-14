@@ -8,7 +8,7 @@
         int Defense;
         int SpAtk;
         int SpDef;
-        int Seepd;
+        int Speed;
     //SKILLS
         //int Covet = 60;
         //int Swift = 60; //60% de acerto

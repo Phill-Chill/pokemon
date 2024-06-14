@@ -22,7 +22,8 @@ void musicbattle(){
 
 int main(){
 
-    EeveeSt Eevee;    VictiniSt Victini;  BulbasaurSt Bulbasaur;
+    EeveeSt Eev = {55, 55, 50, 45, 65, 55};    VictiniSt Vic = {100, 100, 100, 100, 100, 100};  BulbasaurSt Bulba = {45, 49, 49, 45, 45, 65};
+
 
     void clear_screen() {
         #ifdef _WIN32
@@ -43,54 +44,89 @@ int main(){
     scanf("%d", &poke);
 
     clear_screen();
+    
 
 
-  int vida = 45;
         if(poke == 1){
-            eeveeFront();
-            victini();
+           //PRINTA OS POKEMONS
+            eeveeFront(Eev);
+            victini(Vic);
+            musicbattle(); 
+            //INICIA A MECANICA DO JOGO
+            for(; Eev.HP > 0;){
+                int x;
+                scanf("%d", &x); 
+//HP = Eev.HP; Attack = Vic.Attack; Defense = Eev.Defense;
+                if(x == 1){
             
+            
+                    Hp(&Vic, &Eev, Vic.HP, Eev.Attack, Vic.Defense);
+             
+                    clear_screen();
+
+
+                    eeveeFront(Eev);
+                    victini(Vic);
+                }
+                else if(x == 2){
+                    clear_screen();
+
+
+                    eeveeFront(Eev);
+                    victiniBAG(Vic);
+
+                }
+            }
+        
+        
+        
+        
+        
+        
         }
 
         else if(poke == 2){
-            victiniFront();
-
-            bulbasaur(&vida);
+            victiniFront(Vic);
+            bulbasaur(Bulba);
+        
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         }
 
         else if(poke == 3){
-            bulbasaurFront();
-
-            eevee();
+            bulbasaurFront(Bulba);
+            eevee(Eev);
+            
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         }
     //inicia a musica
-    musicbattle();  
-
-    for(; vida > 0;){
-        int x;
-         scanf("%d", &x); 
-
-        if(x == 1){
-            
-            
-            HP(&vida);
-             
-            clear_screen();
+    
 
 
-            victiniFront();
 
-            bulbasaur(&vida);
-        }
-        else if(x == 2){
-            clear_screen();
-
-
-            victiniFront();
-
-            bagbulba(&vida);
-        }
-    }
+    
     // Para a música matando o processo mpg123
     system("pkill mpg123");
  //clear_screen();
