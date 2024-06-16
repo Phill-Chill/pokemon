@@ -4,7 +4,7 @@
 #include "PokemonUser.h"
 #include "statusPoke.h"
 #include "music.h"
-
+//DELAY
 void sleep_ms(int milliseconds) {
     struct timespec ts;
     ts.tv_sec = milliseconds / 1000;
@@ -47,7 +47,7 @@ void musicHP() {
 
 int main(){
 
-    EeveeSt Eev = {55, 55, 50, 45, 65, 55, 3};    VictiniSt Vic = {100, 100, 100, 100, 100, 100, 3};  BulbasaurSt Bulba = {45, 49, 49, 45, 45, 65, 3};
+    EeveeSt Eev = {55, 55, 50, 45, 65, 55, 3};    VictiniSt Vic = {100, 100, 100, 100, 100, 100, 3};  BulbasaurSt Bulba = {45, 49, 49, 45, 45, 65, 3}; item itens = {3, 2, 5};
 
 
     void clear_screen() {
@@ -91,7 +91,7 @@ int main(){
                     
                     sleep_ms(300);
 
-                    Hp(&Vic, &Eev, Vic.HP, Eev.Attack, Vic.Defense);
+                    Hp(&itens);
                     
                     clear_screen();
                     
