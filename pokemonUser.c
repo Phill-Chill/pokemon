@@ -12,11 +12,22 @@
         Vic -> HP -= (Bulba->Attack - Vic->Defense)*-1;
          if(Vic->HP < 0){Vic->HP = 0;}
     }
+    //MECANICA ITENS
+    void BAG(item *itens, int potion, int PP, int DMG){
+        int IT;
+        scanf("%d ", &IT);
 
-    void pot(BulbasaurSt *Bulba,int potion, int HP){
-        Bulba-> potion --;
-        Bulba -> HP += 15;
+        if(IT == 1 && potion > 0){
+            itens -> potion--;
+            //POKEMON USER
+
+        }
+        else if(IT == 2 && PP > 0){
+            itens -> PP --;
+        }
     }
+
+    
 
     void victini(VictiniSt Vic){
 
