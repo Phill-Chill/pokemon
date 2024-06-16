@@ -9,6 +9,7 @@
         int SpAtk;
         int SpDef;
         int Speed;
+        int potion;
     //SKILLS
         //int Covet = 60;
         //int Swift = 60; //60% de acerto

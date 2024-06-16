@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
+#include <time.h>
 #include "music.h"
 
 void Pokemon(){
@@ -12,6 +12,12 @@ void Pokemon(){
         system("clear");
         #endif
     }
+    void sleep_ms(int milliseconds) {
+    struct timespec ts;
+    ts.tv_sec = milliseconds / 1000;
+    ts.tv_nsec = (milliseconds % 1000) * 1000000;
+    nanosleep(&ts, NULL);
+}
 //printar POKEMON
     printf("//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n");
     printf("/  PPPPPPPPPPPPPPPPP                    kkkkkkkk                                                                                             /\n");
@@ -113,7 +119,7 @@ void Pokemon(){
 
 
 
-        sleep(3);
+        sleep_ms(3000);
 
         clear_screen();
 
@@ -182,7 +188,7 @@ void Pokemon(){
         printf("\n                             PEDRO HENRIQUE GALDINO DE ANDRADE WOLLMANN                           \n");
 
 
-        sleep(3);
+       sleep_ms(3000);
 
         clear_screen();
 
@@ -247,7 +253,7 @@ void Pokemon(){
         printf("\n                             ARTHUR MARTINS SANTOS DA SILVA                           \n");
         
         
-        sleep(3);
+        sleep_ms(3000);
 
         clear_screen();
         
